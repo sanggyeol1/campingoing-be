@@ -5,16 +5,16 @@ const authController = require("../controllers/auth.controller");
 
 //회원조회
 router.get(
-    "/me",
-    authController.authenticate,
-    userController.getUser);
+  "/me",
+  authController.authenticate,
+  userController.getUser);
 
 
 //회원가입
 router.post(
-    "/", 
-    userController.checkNickname, 
-    userController.createUser
+  "/",
+  userController.checkNickname,
+  userController.createUser
 );
 
 //닉네임 수정
@@ -27,16 +27,16 @@ router.put(
 
 //유저수정
 router.put(
-    "/:id", 
-    authController.authenticate, 
-    userController.updateUser
+  "/:id",
+  authController.authenticate,
+  userController.updateUser
 );
 
 //유저삭제
 router.delete(
-    "/:id", 
-    authController.authenticate, 
-    userController.deleteUser
+  "/:id",
+  authController.authenticate,
+  userController.deleteUser
 );
 
 
