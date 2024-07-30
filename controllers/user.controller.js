@@ -16,7 +16,20 @@ userController.checkNickname = async (req, res, next) => {
 }
 
 //유저정보 조회
-userController.getUser = async (req, res) => { };
+userController.getUser = async (req, res) => {
+    try {
+        const { userId } = req
+        const user = await User.findById(userId)
+
+        if (!user) {
+            throw new Error("사용자를 찾을 수 없습니다.")
+        }
+
+        res.status(200).json({ status: "success", user })
+    } catch (error) {
+        res.status(400).json({ status: "token login fail", error: error.message })
+    }
+};
 
 //회원가입
 userController.createUser = async (req, res) => {

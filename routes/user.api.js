@@ -3,18 +3,18 @@ const router = express.Router();
 const userController = require("../controllers/user.controller");
 const authController = require("../controllers/auth.controller");
 
-//회원조회
-router.get(
-  "/me",
-  authController.authenticate,
-  userController.getUser);
-
-
 //회원가입
 router.post(
   "/",
   userController.checkNickname,
   userController.createUser
+);
+
+//회원조회
+router.get(
+  "/me",
+  authController.authenticate,
+  userController.getUser
 );
 
 //닉네임 수정
