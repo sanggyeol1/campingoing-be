@@ -11,6 +11,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json()); //req.body가 객체로 인식됨
 app.use("/api", indexRouter);
 const testmongoURI = process.env.LOCAL_DB_ADDRESS;
+
 const mongoURI = process.env.MONGODB_URI_PROD;
 
 mongoose
