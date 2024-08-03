@@ -18,11 +18,11 @@ router.get(
 );
 
 //내가 작성한 리뷰조회
-// router.get(
-//     "/me",
-//     authController.authenticate,
-//     reviewController.getReview
-// );
+router.get(
+    "/me",
+    authController.authenticate,
+    reviewController.getReview
+);
 
 
 module.exports = router;
